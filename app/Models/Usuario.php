@@ -13,6 +13,8 @@ use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 class Usuario extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
+
+
     protected $primaryKey = "USUA_ID";
 
     /**

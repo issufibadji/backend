@@ -1,0 +1,20 @@
+php artisan make:model PasswordReset
+Service.php
+php artisan make:request AuthLoginRequest 
+
+php artisan make:exception LoginInvalidoException
+php artisan make:exception
+
+php artisan make:resource 
+
+
+php artisan make:event UserRegistered 
+
+php artisan make:listener SendWelcomeEmailListener
+
+Event
+Listener
+
+php artisan make:mail WelcomeMail
+
+

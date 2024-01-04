@@ -13,15 +13,29 @@ use App\Models\Usuario;
 use App\Services\AuthService;
 
 
+/**
+ *
+ */
 class AuthController extends Controller
 {
+    /**
+     * @var AuthService
+     */
     private $authService;
 
+    /**
+     * @param AuthService $authService
+     */
     public function __construct(AuthService $authService)
     {
         $this->authService = $authService;
     }
 
+    /**
+     * @param LoginRequest $request
+     * @return UserResource
+     * @throws \App\Exceptions\LoginIvalidException
+     */
     public function login(LoginRequest $request):UserResource
     {
         $input = $request->validated();
@@ -35,6 +49,11 @@ class AuthController extends Controller
         return (new UserResource(Auth()->user()))->additional($token);
     }
 
+    /**
+     * @param RegisterRequest $request
+     * @return UserResource
+     * @throws \App\Exceptions\UserHasBeenTakenException
+     */
     public function register(RegisterRequest $request):UserResource
      {
 

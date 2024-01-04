@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('peticaos', function (Blueprint $table) {
             $table->bigIncrements('PETI_ID');
-            $table->bigInteger('PETI_PROC')->nullable();;
+            $table->bigInteger('PETI_PROC')->nullable();
             $table->string('PETI_TIPO_PROC',255);
             $table->string('PETI_ORG',50);
             $table->dateTime('PETI_DTH')->nullable();;

@@ -4,6 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ *
+ */
 class UsuarioStoreRequest extends FormRequest
 {
     /**
@@ -24,10 +27,10 @@ class UsuarioStoreRequest extends FormRequest
         return [
             'dadosPessoaisAt.nome'=>'required|string|min:3|max:50',
             'dadosPessoaisAt.cpf'=>'required|unique:usuarios,USUA_CD_CPF|string|min:11|max:11|regex:/^[0-9]+$/',
-            'dadosPessoaisAt.rg'=>'required|string',
+            'dadosPessoaisAt.rg'=>'required',
             'dadosPessoaisAt.pais'=>'required|string|',
-            'dadosPessoaisAt.profissao'=>'required|string',
-            'dadosPessoaisAt.estadocivil'=>'required|string',
+            'dadosPessoaisAt.profissao'=>'required|string|min:3',
+            'dadosPessoaisAt.estadocivil'=>'required',
             'dadosPessoaisAt.email'=>'required|unique:usuarios,USUA_TX_EMAIL|string|regex:/(.+)@(.+)\.(.+)/i',
             'dadosPessoaisAt.telefone.*.telefone' => 'required|integer|min:11',
             'tipoProcesso'=>'required',
